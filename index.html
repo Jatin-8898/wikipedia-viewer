@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wikipedia Viewer</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 col-md-6 col-sm-12 col-12">
+                <h2 class="my-5">Wikipedia Viewer</h2>
+
+                    <div class="col-md-6  mx-auto p-3">
+                    
+                        <a class="btn btn-primary mr-4 random-btn" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random</a>
+                        <button class="btn btn-success" name="btn-search" id="btn-search">Search</button>
+                     
+
+                        <div class="row" id="search-row" hidden>
+                            <div class="col-md-8">
+                                <input type="text" name="text_search" id="text_search" class="form-control" placeholder="Enter your query">
+                            </div>
+                            <div class="col-md-4">
+                                <a class="btn btn-danger" href="index.html">Back</a>
+                            </div>
+                   
+                        </div>
+                    </div>                    
+            </div>    
+        </div>  
+        
+
+        <div id="display-data row">
+            <div class="display-results col-md-12">
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="mt-5 pt-5 p-3 text-center">
+        <p class="lead "> Wikipedia Viewer</p>
+        Made  With  Love  By  Jatin  Varlyani &copy; 2018
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+
+    <script>
+    var clicked = 1;
+        $("#btn-search").on("click", function () {
+
+            if (clicked) {//wen  clicked
+
+                $(".random-btn").attr("hidden", "true");
+                $("#btn-search").attr("hidden", "true");
+                $("#search-row").removeAttr("hidden");
+                $("#text_search").focus();
+
+            } else {
+                $("#search-row").attr("hidden", "true");
+            }
+
+            clicked = !clicked;
+            console.log(clicked);
+        });
+
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
