@@ -29,7 +29,7 @@ function ajax(keyword) {  //AJAX request
         dataType: "jsonp",
 
         success: function (response) {
-            console.log(response.query);
+            //console.log(response.query);
             
             if (response.query.searchinfo.totalhits === 0) {
                 alert(keyword + "NO RESULTS FOUND");
